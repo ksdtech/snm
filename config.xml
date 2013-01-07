@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- refer to:
+     readme.html or
+     http://snm.sourceforge.net/operate.html
+     for details on configuring this file.  
+     for OS X launchd compatibility, do not set daemon attribute in <nix_mgt> element
+-->
+<opt>
+  <web directory="/Library/WebServer/Documents/snm/" base_url="/snm/" />
+  <target file="/Users/Shared/snm/targets.xml" />
+  <alert file="/Users/Shared/snm/alerts.xml" />
+  <log file="/var/log/snm.log" purge="7" />
+  <attributes in_file="/Users/Shared/snm/discover.xml" out_file="attributes.xml" frequency="24" />
+  <default frequency="300" timeout="3" />
+  <ping file="/sbin/ping" />
+  <!-- In ping, note that file="" is commented out by using 'no_file=""' -->
+  <snmp port="161" retries="2" />
+  <image format="PNG" width="520" height="120" />
+  <graph file="/Users/Shared/snm/graphs.xml" folder="graphs" no_font="" font_color="555555" tab="30" />
+  <!-- In graph, note that font="" is commented out by using 'no_font=""' -->
+  <rrdstep timeout="2" />
+  <mail server="64.171.175.68" from="snm@kentfieldschools.org" />
+  <nix_mgt PID_path="/var/run/snm.pid" />
+</opt>
+

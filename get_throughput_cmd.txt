@@ -1,0 +1,3 @@
+afp:command=getHistory
+afp:variant=v2
+afp:timeScale=300

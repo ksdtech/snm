@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<discover>
+  <suite id="base">
+    <value oid="1.3.6.1.2.1.1.1.0"   description="System Description">
+        <translate value="1"  text="test1" />
+    </value>
+    <value oid="1.3.6.1.2.1.1.4.0"   description="System Contact">
+        <translate value="1"  text="test1" />
+        <translate value="2"  text="test2" />
+    </value>
+    <table description="Interfaces">
+      <column oid="1.3.6.1.2.1.2.2.1.1" description="Index" />
+      <column oid="1.3.6.1.2.1.2.2.1.2" description="Description" />
+      <column oid="1.3.6.1.2.1.2.2.1.3" description="Type">
+        <translate value="1"  text="other" />
+        <translate value="6"  text="ethernet-csmacd" />
+        <translate value="15" text="fddi" />
+        <translate value="17" text="sdlc" />
+        <translate value="18" text="ds1" />
+        <translate value="19" text="e1" />
+        <translate value="23" text="ppp" />
+        <translate value="24" text="softwareloopback" />
+        <translate value="32" text="framerelay" />
+      </column>
+      <column oid="1.3.6.1.2.1.2.2.1.8" description="Operational Status">
+        <translate value="1" text="Up" />
+        <translate value="2" text="Down" />
+      </column>
+      <column oid="1.3.6.1.2.1.2.2.1.5" description="Speed (Mbit/s)"  calculate="1e6,/" />
+    </table>
+  </suite>
+  <suite id="hrStorage">
+    <table description="hrStorage">
+      <column oid="1.3.6.1.2.1.25.2.3.1.1" description="Index" />
+      <column oid="1.3.6.1.2.1.25.2.3.1.3" description="Description" />
+      <column oid="1.3.6.1.2.1.25.2.3.1.4" description="Allocation Units (bytes)" />
+      <column oid="1.3.6.1.2.1.25.2.3.1.5" description="Size (Alloc. Units)" />
+    </table>
+    <value oid="1.3.6.1.2.1.25.2.2.0"   description="hrMemory Size (MB)" />
+  </suite>
+  <suite id="SWInstalled">
+    <table description="Software Installed">
+      <column oid="1.3.6.1.2.1.25.6.3.1.1" description="Index" />
+      <column oid="1.3.6.1.2.1.25.6.3.1.2" description="Name" />
+      <column oid="1.3.6.1.2.1.25.6.3.1.5" description="Date" convert="date" />
+    </table>    
+    <value oid="1.3.6.1.2.1.25.6.2.0" description="SW Installed Last Update Time" />
+    <value oid="1.3.6.1.2.1.25.6.1.0" description="SW Installed Last Change" />
+    <value oid="1.3.6.1.2.1.25.1.2.0" description="System Date" convert="date" />
+  </suite>
+</discover>

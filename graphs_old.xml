@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<!-- refer to:
+     readme.html or
+     http://snm.sourceforge.net/operate.html
+     for details on configuring this file.  -->
+<graphs>
+  <page menu="Net:Kent router" description="Graphs for Kent MDF main router">
+    <graph description="Ping to external hosts" vertical_label="msec" short_label="msec" graph_min="0" k_base="1000" number_format="fixed">
+      <plot plot="AREA"  color="58D5AB" description="k-ed  avg">[kednet:ping:avg:MAX]</plot>
+      <plot plot="LINE1" color="247D8F" description="Apple avg">[apple:ping:avg:MAX]</plot> 
+      <plot plot="LINE1" color="24478F" description="MCOE  avg">[mcoe:ping:avg:MAX]</plot>
+   </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="Internet (se0/0) TotalOctets">[kent_router:ifUsage:10.1:MAX],[kent_router:ifUsage:16.1:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="Internet (se0/0) ifInOctet  ">[kent_router:ifUsage:10.1:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="Internet (se0/0) ifOutOctet ">[kent_router:ifUsage:16.1:MAX],8,*</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="Bacich (se1/0) TotalOctets">[kent_router:ifUsage:10.2:MAX],[kent_router:ifUsage:16.2:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="Bacich (se1/0) ifInOctet  ">[kent_router:ifUsage:10.2:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="Bacich (se1/0) ifOutOctet ">[kent_router:ifUsage:16.2:MAX],8,*</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="Kent (fa0/0) TotalOctets">[kent_router:ifUsage:10.3:MAX],[kent_router:ifUsage:16.3:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="Kent (fa0/0) ifInOctet  ">[kent_router:ifUsage:10.3:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="Kent (fa0/0) ifOutOctet ">[kent_router:ifUsage:16.3:MAX],8,*</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="Servers (fa1/0) TotalOctets">[kent_router:ifUsage:10.4:MAX],[kent_router:ifUsage:16.4:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="Servers (fa1/0) ifInOctet  ">[kent_router:ifUsage:10.4:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="Servers (fa1/0) ifOutOctet ">[kent_router:ifUsage:16.4:MAX],8,*</plot>
+    </graph>
+  </page>
+  <page menu="Net:Bacich router" description="Graphs for Bacich router">
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="Bacich (fe) TotalOctets">[bacich_router:ifUsage:10.1:MAX],[bacich_router:ifUsage:16.1:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="Bacich (fe) ifInOctet  ">[bacich_router:ifUsage:10.1:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="Bacich (fe) ifOutOctet ">[bacich_router:ifUsage:16.1:MAX],8,*</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="Kent (ppp) TotalOctets">[bacich_router:ifUsage:10.3:MAX],[bacich_router:ifUsage:16.3:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="Kent (ppp) ifInOctet  ">[bacich_router:ifUsage:10.3:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="Kent (ppp) ifOutOctet ">[bacich_router:ifUsage:16.3:MAX],8,*</plot>
+    </graph>
+  </page>
+  <page menu="Net:Kent core" description="Graphs for Kent MDF core switch">
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="Router (D20) TotalOctets">[kent_4104gl:ifUsage:10.92:MAX],[kent_4104gl:ifUsage:16.92:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="Router (D20) ifInOctet  ">[kent_4104gl:ifUsage:10.92:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="Router (D20) ifOutOctet ">[kent_4104gl:ifUsage:16.92:MAX],8,*</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="Library (D19) TotalOctets">[kent_4104gl:ifUsage:10.91:MAX],[kent_4104gl:ifUsage:16.91:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="Library (D19) ifInOctet  ">[kent_4104gl:ifUsage:10.91:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="Library (D19) ifOutOctet ">[kent_4104gl:ifUsage:16.91:MAX],8,*</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="Room 16 (26) TotalOctets">[kent_16_switch:ifUsage:10.26:MAX],[kent_16_switch:ifUsage:16.26:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="Room 16 (26) ifInOctet  ">[kent_16_switch:ifUsage:10.26:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="Room 16 (26) ifOutOctet ">[kent_16_switch:ifUsage:16.26:MAX],8,*</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="Room 18 Elec (25) TotalOctets">[kent_18_switch:ifUsage:10.25:MAX],[kent_18_switch:ifUsage:16.25:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="Room 18 Elec (25) ifInOctet  ">[kent_18_switch:ifUsage:10.25:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="Room 18 Elec (25) ifOutOctet ">[kent_18_switch:ifUsage:16.25:MAX],8,*</plot>
+    </graph>
+  </page>
+  <page menu="Servers:kad-x5" description="Graphs for kad-x5 server">
+    <graph description="Ping" vertical_label="msec" short_label="msec" graph_min="0" k_base="1000" number_format="fixed">
+      <plot plot="AREA"  color="478F24" description="ping max">[kad_x5:ping:max:MAX]</plot>
+      <plot plot="AREA"  color="D55882" description="ping min">[kad_x5:ping:min:MAX]</plot>
+      <plot plot="LINE1" color="24478F" description="ping avg">[kad_x5:ping:avg:MAX]</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="10.4.51.70 (en0) TotalOctets">[kad_x5:ifUsage:10.4:MAX],[kad_x5:ifUsage:16.4:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="10.4.51.70 (en0) InOctets   ">[kad_x5:ifUsage:10.4:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="10.4.51.70 (en0) OutOctets  ">[kad_x5:ifUsage:16.4:MAX],8,*</plot>
+    </graph>
+    <graph description="AFP throughput" vertical_label="byte/sec" short_label="B/s" graph_min="0" k_base="1000">
+      <plot plot="LINE1" color="24478F" description="AFP throughput">[kad_x5:afpThroughput:0:AVERAGE]</plot>
+    </graph>
+    <graph description="AFP users" vertical_label="users" short_label="users" graph_min="0" k_base="1000" number_format="fixed">
+      <plot plot="LINE1" color="24478F" description="connected AFP users">[kad_x5:afpUsers:0:AVERAGE]</plot>
+    </graph>
+    <graph description="System Load" vertical_label="load average" short_label="load" graph_min="0" graph_max="1" k_base="1000" number_format="fixed">
+      <plot plot="LINE1" color="24478F" description="1min load ">[kad_x5:Load:1:AVERAGE],100,/</plot>
+      <plot plot="LINE1" color="C03060" description="5min load ">[kad_x5:Load:2:AVERAGE],100,/</plot>
+      <plot plot="AREA"  color="8F2447" description="15min load">[kad_x5:Load:3:AVERAGE],100,/</plot>
+    </graph>
+    <graph description="Processes" vertical_label="processes" short_label="n" graph_min="0" k_base="1000">
+      <plot plot="LINE1" color="24478F" description="Processes">[kad_x5:Processes:0:AVERAGE]</plot>
+    </graph>
+    <graph description="Disk Storage for Volume: root" vertical_label="disk free (bytes)" short_label="bytes" graph_min="0"  k_base="1024">
+      <plot plot="AREA"  color="8F2447" description="Disk Total">[kad_x5:DiskStorage4096:5.4:AVERAGE],4096,*</plot>
+      <plot plot="LINE1" color="009999" description="Disk Free ">[kad_x5:DiskStorage4096:5.4:AVERAGE],[kad_x5:DiskStorage4096:6.4:AVERAGE],-,4096,*</plot>
+    </graph>
+  </page>
+  <page menu="Servers:kst-x5" description="Graphs for kst-x5 server">
+    <graph description="Ping" vertical_label="msec" short_label="msec" graph_min="0" k_base="1000" number_format="fixed">
+      <plot plot="AREA"  color="478F24" description="ping max">[kst_x5:ping:max:MAX]</plot>
+      <plot plot="AREA"  color="D55882" description="ping min">[kst_x5:ping:min:MAX]</plot>
+      <plot plot="LINE1" color="24478F" description="ping avg">[kst_x5:ping:avg:MAX]</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="10.4.51.80 (en0) TotalOctets">[kst_x5:ifUsage:10.4:MAX],[kst_x5:ifUsage:16.4:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="10.4.51.80 (en0) InOctets   ">[kst_x5:ifUsage:10.4:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="10.4.51.80 (en0) OutOctets  ">[kst_x5:ifUsage:16.4:MAX],8,*</plot>
+    </graph>
+    <graph description="AFP throughput" vertical_label="byte/sec" short_label="B/s" graph_min="0" k_base="1000">
+      <plot plot="LINE1" color="24478F" description="AFP throughput">[kst_x5:afpThroughput:0:AVERAGE]</plot>
+    </graph>
+    <graph description="AFP users" vertical_label="users" short_label="users" graph_min="0" k_base="1000" number_format="fixed">
+      <plot plot="LINE1" color="24478F" description="connected AFP users">[kst_x5:afpUsers:0:AVERAGE]</plot>
+    </graph>
+    <graph description="System Load" vertical_label="load average" short_label="load" graph_min="0" graph_max="1" k_base="1000" number_format="fixed">
+      <plot plot="LINE1" color="24478F" description="1min load ">[kst_x5:Load:1:AVERAGE],100,/</plot>
+      <plot plot="LINE1" color="C03060" description="5min load ">[kst_x5:Load:2:AVERAGE],100,/</plot>
+      <plot plot="AREA"  color="8F2447" description="15min load">[kst_x5:Load:3:AVERAGE],100,/</plot>
+    </graph>
+    <graph description="Processes" vertical_label="processes" short_label="n" graph_min="0" k_base="1000">
+      <plot plot="LINE1" color="24478F" description="Processes">[kst_x5:Processes:0:AVERAGE]</plot>
+    </graph>
+    <graph description="Disk Storage for Volume: root" vertical_label="disk free (bytes)" short_label="bytes" graph_min="0"  k_base="1024">
+      <plot plot="AREA"  color="8F2447" description="Disk Total">[kst_x5:DiskStorage4096:5.4:AVERAGE],4096,*</plot>
+      <plot plot="LINE1" color="009999" description="Disk Free ">[kst_x5:DiskStorage4096:5.4:AVERAGE],[kst_x5:DiskStorage4096:6.4:AVERAGE],-,4096,*</plot>
+    </graph>
+  </page>
+  <page menu="Servers:bad-x5" description="Graphs for bad-x5 server">
+    <graph description="Ping" vertical_label="msec" short_label="msec" graph_min="0" k_base="1000" number_format="fixed">
+      <plot plot="AREA"  color="478F24" description="ping max">[bad_x5:ping:max:MAX]</plot>
+      <plot plot="AREA"  color="D55882" description="ping min">[bad_x5:ping:min:MAX]</plot>
+      <plot plot="LINE1" color="24478F" description="ping avg">[bad_x5:ping:avg:MAX]</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="10.3.51.73 (en0) TotalOctets">[bad_x5:ifUsage:10.4:MAX],[bad_x5:ifUsage:16.4:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="10.3.51.73 (en0) InOctets   ">[bad_x5:ifUsage:10.4:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="10.3.51.73 (en0) OutOctets  ">[bad_x5:ifUsage:16.4:MAX],8,*</plot>
+    </graph>
+    <graph description="AFP throughput" vertical_label="byte/sec" short_label="B/s" graph_min="0" k_base="1000">
+      <plot plot="LINE1" color="24478F" description="AFP throughput">[bad_x5:afpThroughput:0:AVERAGE]</plot>
+    </graph>
+    <graph description="AFP users" vertical_label="users" short_label="users" graph_min="0" k_base="1000" number_format="fixed">
+      <plot plot="LINE1" color="24478F" description="connected AFP users">[bad_x5:afpUsers:0:AVERAGE]</plot>
+    </graph>
+    <graph description="System Load" vertical_label="load average" short_label="load" graph_min="0" graph_max="1" k_base="1000" number_format="fixed">
+      <plot plot="LINE1" color="24478F" description="1min load ">[bad_x5:Load:1:AVERAGE],100,/</plot>
+      <plot plot="LINE1" color="C03060" description="5min load ">[bad_x5:Load:2:AVERAGE],100,/</plot>
+      <plot plot="AREA"  color="8F2447" description="15min load">[bad_x5:Load:3:AVERAGE],100,/</plot>
+    </graph>
+    <graph description="Processes" vertical_label="processes" short_label="n" graph_min="0" k_base="1000">
+      <plot plot="LINE1" color="24478F" description="Processes">[bad_x5:Processes:0:AVERAGE]</plot>
+    </graph>
+    <graph description="Disk Storage for Volume: root" vertical_label="disk free (bytes)" short_label="bytes" graph_min="0"  k_base="1024">
+      <plot plot="AREA"  color="8F2447" description="Disk Total">[bad_x5:DiskStorage4096:5.4:AVERAGE],4096,*</plot>
+      <plot plot="LINE1" color="478F24" description="Disk Free ">[bad_x5:DiskStorage4096:5.4:AVERAGE],[bad_x5:DiskStorage4096:6.4:AVERAGE],-,4096,*</plot>
+    </graph>
+  </page>
+  <page menu="Servers:mail" description="Graphs for mail server">
+    <graph description="Ping" vertical_label="msec" short_label="msec" graph_min="0" k_base="1000" number_format="fixed">
+      <plot plot="AREA"  color="478F24" description="ping max">[mail:ping:max:MAX]</plot>
+      <plot plot="AREA"  color="D55882" description="ping min">[mail:ping:min:MAX]</plot>
+      <plot plot="LINE1" color="24478F" description="ping avg">[mail:ping:avg:MAX]</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="64.171.175.68 (en0) TotalOctets">[mail:ifUsage:10.4:MAX],[mail:ifUsage:16.4:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="64.171.175.68 (en0) InOctets   ">[mail:ifUsage:10.4:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="64.171.175.68 (en0) OutOctets  ">[mail:ifUsage:16.4:MAX],8,*</plot>
+    </graph>
+    <graph description="Mail - In" vertical_label="messages/hr" short_label="msg/hr" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="8F2447" description="received">[mail:mailgraph:recv:AVERAGE],3660,*</plot>
+      <plot plot="LINE1" color="C03060" description="bounced ">[mail:mailgraph:bounced:AVERAGE],3600,*</plot>
+      <plot plot="LINE1" color="478F24" description="rejected">[mail:mailgraph:rejected:AVERAGE],3600,*</plot>
+    </graph>
+    <graph description="Mail - Out" vertical_label="messages/hr" short_label="msg/hr" graph_min="0" k_base="1000">
+      <plot plot="LINE1" color="24478F" description="sent">[mail:mailgraph:sent:AVERAGE],3600,*</plot>
+    </graph>
+    <graph description="Mail Queue" vertical_label="messages" short_label="msgs" graph_min="0" k_base="1000">
+      <plot plot="LINE1" color="24478F" description="queued msgs">[mail:mailqCount:0:AVERAGE]</plot>
+    </graph>
+    <graph description="System Load" vertical_label="load average" short_label="load" graph_min="0" graph_max="1" k_base="1000" number_format="fixed">
+      <plot plot="LINE1" color="24478F" description="1min load ">[mail:Load:1:AVERAGE],100,/</plot>
+      <plot plot="LINE1" color="C03060" description="5min load ">[mail:Load:2:AVERAGE],100,/</plot>
+      <plot plot="AREA"  color="8F2447" description="15min load">[mail:Load:3:AVERAGE],100,/</plot>
+    </graph>
+    <graph description="Processes" vertical_label="processes" short_label="n" graph_min="0" k_base="1000">
+      <plot plot="LINE1" color="24478F" description="Processes">[mail:Processes:0:AVERAGE]</plot>
+    </graph>
+    <graph description="Disk Storage for Volume: root" vertical_label="disk free (bytes)" short_label="bytes" graph_min="0"  k_base="1024">
+      <plot plot="AREA"  color="8F2447" description="Disk Total">[mail:DiskStorage4096:5.4:AVERAGE],4096,*</plot>
+      <plot plot="LINE1" color="478F24" description="Disk Free ">[mail:DiskStorage4096:5.4:AVERAGE],[mail:DiskStorage4096:6.4:AVERAGE],-,4096,*</plot>
+    </graph>
+  </page>
+  <page menu="Servers:ksa-p5" description="Graphs for ksa-p5 server">
+    <graph description="Ping" vertical_label="msec" short_label="msec" graph_min="0" k_base="1000" number_format="fixed">
+      <plot plot="AREA"  color="478F24" description="ping max">[ksa_p5:ping:max:MAX]</plot>
+      <plot plot="AREA"  color="D55882" description="ping min">[ksa_p5:ping:min:MAX]</plot>
+      <plot plot="LINE1" color="24478F" description="ping avg">[ksa_p5:ping:avg:MAX]</plot>
+    </graph>
+    <graph description="Network Usage" vertical_label="bit/sec" short_label="b/s" graph_min="0" k_base="1000">
+      <plot plot="AREA"  color="58D5AB" description="10.4.51.76 (en0) TotalOctets">[ksa_p5:ifUsage:10.4:MAX],[ksa_p5:ifUsage:16.4:MAX],+,8,*</plot>
+      <plot plot="LINE1" color="24478F" description="10.4.51.76 (en0) InOctets   ">[ksa_p5:ifUsage:10.4:MAX],8,*</plot>
+      <plot plot="LINE1" color="247D8F" description="10.4.51.76 (en0) OutOctets  ">[ksa_p5:ifUsage:16.4:MAX],8,*</plot>
+    </graph>
+    <graph description="System Load" vertical_label="load average" short_label="load" graph_min="0" graph_max="1" k_base="1000" number_format="fixed">
+      <plot plot="LINE1" color="24478F" description="1min load ">[ksa_p5:Load:1:AVERAGE],100,/</plot>
+      <plot plot="LINE1" color="C03060" description="5min load ">[ksa_p5:Load:2:AVERAGE],100,/</plot>
+      <plot plot="AREA"  color="8F2447" description="15min load">[ksa_p5:Load:3:AVERAGE],100,/</plot>
+    </graph>
+    <graph description="Processes" vertical_label="processes" short_label="n" graph_min="0" k_base="1000">
+      <plot plot="LINE1" color="24478F" description="Processes">[ksa_p5:Processes:0:AVERAGE]</plot>
+    </graph>
+    <graph description="Disk Storage for Volume: root" vertical_label="disk free (bytes)" short_label="bytes" graph_min="0" k_base="1024">
+      <plot plot="AREA"  color="8F2447" description="Disk Total">[ksa_p5:DiskStorage4096:5.4:AVERAGE],4096,*</plot>
+      <plot plot="LINE1" color="478F24" description="Disk Free ">[ksa_p5:DiskStorage4096:5.4:AVERAGE],[ksa_p5:DiskStorage4096:6.4:AVERAGE],-,4096,*</plot>
+    </graph>
+  </page>
+</graphs>
+

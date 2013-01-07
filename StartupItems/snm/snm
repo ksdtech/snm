@@ -1,0 +1,33 @@
+#!/bin/sh
+
+#!/bin/sh
+
+##
+# snm startup script
+##
+
+. /etc/rc.common
+
+StartService ()
+{
+    ConsoleMessage "Starting snm"
+    /opt/local/bin/snm.pl -c /opt/local/etc/snm/config.xml
+}
+
+StopService ()
+{
+   if pid=$(GetPID snm); then
+       ConsoleMessage "Stopping snm"
+       kill -TERM "${pid}"
+   else
+       echo "snm is not running."
+   fi
+}
+
+RestartService ()
+{
+    StopService
+    StartService
+}
+
+RunService "$1"

@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<!-- refer to:
+     readme.html or
+     http://snm.sourceforge.net/operate.html
+     for details on configuring this file.  -->
+     <!-- T1         input_max = 1.93e5 octet/sec = 1.544e6 bit/sec -->
+     <!-- 10Base-T   input_max = 1.25e6 octet/sec = 10 M bit/sec -->
+     <!-- 100Base-T  input_max = 1.25e7 octet/sec = 100 M bit/sec -->
+     <!-- SX, GB     input_max = 1.25e8 octet/sec = 1 G bit/sec -->
+<targets>
+  <target id="mcoe" ip_address="199.88.112.10" attributes="no" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+  </target>
+  <target id="kednet" ip_address="69.39.88.68" attributes="no" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+  </target>
+  <target id="kent_3560g" ip_address="10.254.254.254" community="public" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+    <template id="sysUpTime" oid="1.3.6.1.2.1.1.3.0" data_source_type="GAUGE" frequency="900" />
+    <template id="ifUsage" oid="1.3.6.1.2.1.2.2.1.int" data_source_type="COUNTER">
+      <interface int="10.41" description="vlan 41 ifInOctet " input_max="1.25e7"  input_min="0" />
+      <interface int="16.41" description="vlan 41 ifOutOctet" input_max="1.25e7"  input_min="0" />
+      <interface int="10.47" description="vlan 47 ifInOctet " input_max="1.25e7"  input_min="0" />
+      <interface int="16.47" description="vlan 47 ifOutOctet" input_max="1.25e7"  input_min="0" />
+      <interface int="10.50" description="vlan 50 ifInOctet " input_max="1.25e7"  input_min="0" />
+      <interface int="16.50" description="vlan 50 ifOutOctet" input_max="1.25e7"  input_min="0" />
+      <interface int="10.100" description="vlan 100 ifInOctet " input_max="1.25e7"  input_min="0" />
+      <interface int="16.100" description="vlan 100 ifOutOctet" input_max="1.25e7"  input_min="0" />
+      <interface int="10.10124" description="outside (Gi0/24) ifInOctet " input_max="1.25e7"  input_min="0" />
+      <interface int="16.10124" description="outside (Gi0/24) ifOutOctet" input_max="1.25e7"  input_min="0" />
+      <interface int="10.10122" description="inside (Gi0/22) ifInOctet " input_max="1.25e7"  input_min="0" />
+      <interface int="16.10122" description="inside (Gi0/22) ifOutOctet" input_max="1.25e7"  input_min="0" />
+      <interface int="10.10123" description="inside (Gi0/23) ifInOctet " input_max="1.25e7"  input_min="0" />
+      <interface int="16.10123" description="inside (Gi0/23) ifOutOctet" input_max="1.25e7"  input_min="0" />
+    </template>
+  </target>
+  <target id="bacich_3560g" ip_address="10.3.254.253" community="public" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+    <template id="sysUpTime" oid="1.3.6.1.2.1.1.3.0" data_source_type="GAUGE" frequency="900" />
+    <template id="ifUsage" oid="1.3.6.1.2.1.2.2.1.int" data_source_type="COUNTER">
+      <interface int="10.10148" description="uplink (Gi0/48) ifInOctet " input_max="1.25e7" input_min="0" />
+      <interface int="16.10148" description="uplink (Gi0/48) ifOutOctet" input_max="1.25e7" input_min="0" />
+    </template>
+  </target>
+  <target id="kent_4104gl" ip_address="10.4.51.245" community="public" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+    <template id="sysUpTime" oid="1.3.6.1.2.1.1.3.0" data_source_type="GAUGE" frequency="900" />
+    <template id="ifUsage" oid="1.3.6.1.2.1.2.2.1.int" data_source_type="COUNTER">
+      <interface int="10.91" description="library (D19) ifInOctet " input_max="1.25e8"  input_min="0" />
+      <interface int="16.91" description="library (D19) ifOutOctet" input_max="1.25e8"  input_min="0" />
+    </template>
+  </target>
+  <target id="kent_16_switch" ip_address="10.4.16.246" community="public" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+    <template id="sysUpTime" oid="1.3.6.1.2.1.1.3.0" data_source_type="GAUGE" frequency="900" />
+    <template id="ifUsage" oid="1.3.6.1.2.1.2.2.1.int" data_source_type="COUNTER">
+      <interface int="10.26" description="uplink (26) ifInOctet " input_max="1.25e8"  input_min="0" />
+      <interface int="16.26" description="uplink (26) ifOutOctet" input_max="1.25e8"  input_min="0" />
+    </template>
+  </target>
+  <target id="kent_18_switch" ip_address="10.4.18.245" community="public" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+    <template id="sysUpTime" oid="1.3.6.1.2.1.1.3.0" data_source_type="GAUGE" frequency="900" />
+    <template id="ifUsage" oid="1.3.6.1.2.1.2.2.1.int" data_source_type="COUNTER">
+      <interface int="10.25" description="uplink (25) ifInOctet " input_max="1.25e8"  input_min="0" />
+      <interface int="16.25" description="uplink (25) ifOutOctet" input_max="1.25e8"  input_min="0" />
+    </template>
+  </target>
+  <target id="kad_x5" ip_address="10.4.51.70" community="public" attributes="base,hrStorage" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+    <template id="sysUpTime" oid="1.3.6.1.2.1.1.3.0" data_source_type="GAUGE" frequency="900" />
+    <template id="ifUsage" oid="1.3.6.1.2.1.2.2.1.int" data_source_type="COUNTER">
+      <interface int="10.4" description="kad (en0) ifInOctet " input_max="1.25e8" input_min="0" />
+      <interface int="16.4" description="kad (en0) ifOutOctet" input_max="1.25e8" input_min="0" />
+    </template>
+    <template id="Load"  oid="1.3.6.1.4.1.2021.10.1.5.int" data_source_type="GAUGE">
+      <!-- uses the UCD-SNMP-MIB OIDs for monitoring Linux/Unix 1, 5 and 15 min load -->
+      <!-- reference: http://www.teamquest.com/resources/gunther/ldavg1.shtml -->
+      <interface int="1" description="1minload"  />
+      <interface int="2" description="5minload"  />
+      <interface int="3" description="15minload" />
+    </template>
+    <template id="Processes" oid="1.3.6.1.2.1.25.1.6.0" data_source_type="GAUGE" frequency="300" /> 
+    <template id="DiskStorage4096" oid="1.3.6.1.2.1.25.2.3.1.int" data_source_type="GAUGE" frequency="3600"> 
+      <!-- Refer to the OID .1.3.6.1.2.1.25.2.3.1.4 to obtain Interface and AllocationUnits information. -->
+      <interface int="5.4" description="Volume size" input_min="0" />
+      <interface int="6.4" description="Volume used" input_min="0" int_alert="lt:409600:2" />
+    </template>
+    <!-- was using module="Afpstats::stats('10.4.51.70', 'u')" -->
+    <template id="afpUsers" oid=".1.3.6.1.4.1.14697.102.1.0" data_source_type="GAUGE" frequency="300" />
+    <template id="afpThroughput" oid=".1.3.6.1.4.1.14697.102.2.0" data_source_type="GAUGE" frequency="300" />
+  </target>
+  <target id="kst_x5" ip_address="10.4.51.80" community="public" attributes="base,hrStorage" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+    <template id="sysUpTime" oid="1.3.6.1.2.1.1.3.0" data_source_type="GAUGE" frequency="900" />
+    <template id="ifUsage" oid="1.3.6.1.2.1.2.2.1.int" data_source_type="COUNTER">
+      <interface int="10.4" description="kst (en0) ifInOctet " input_max="1.25e8" input_min="0" />
+      <interface int="16.4" description="kst (en0) ifOutOctet" input_max="1.25e8" input_min="0" />
+    </template>
+    <template id="Load"  oid="1.3.6.1.4.1.2021.10.1.5.int" data_source_type="GAUGE">
+      <!-- uses the UCD-SNMP-MIB OIDs for monitoring Linux/Unix 1, 5 and 15 min load -->
+      <!-- reference: http://www.teamquest.com/resources/gunther/ldavg1.shtml -->
+      <interface int="1" description="1minload"  />
+      <interface int="2" description="5minload"  />
+      <interface int="3" description="15minload" />
+    </template>
+    <template id="Processes" oid="1.3.6.1.2.1.25.1.6.0" data_source_type="GAUGE" frequency="300" /> 
+    <template id="DiskStorage4096" oid="1.3.6.1.2.1.25.2.3.1.int" data_source_type="GAUGE" frequency="3600"> 
+      <!-- Refer to the OID .1.3.6.1.2.1.25.2.3.1.4 to obtain Interface and AllocationUnits information. -->
+      <interface int="5.4" description="Volume size" input_min="0" />
+      <interface int="6.4" description="Volume used" input_min="0" int_alert="lt:409600:2" />
+    </template>
+    <template id="afpUsers" oid=".1.3.6.1.4.1.14697.102.1.0" data_source_type="GAUGE" frequency="300" />
+    <template id="afpThroughput" oid=".1.3.6.1.4.1.14697.102.2.0" data_source_type="GAUGE" frequency="300" />
+  </target>
+  <target id="bad_x5" ip_address="10.3.51.73" community="public" attributes="base,hrStorage" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+    <template id="sysUpTime" oid="1.3.6.1.2.1.1.3.0" data_source_type="GAUGE" frequency="900" />
+    <template id="ifUsage" oid="1.3.6.1.2.1.2.2.1.int" data_source_type="COUNTER">
+      <interface int="10.4" description="bad (en0) ifInOctet " input_max="1.25e8" input_min="0" />
+      <interface int="16.4" description="bad (en0) ifOutOctet" input_max="1.25e8" input_min="0" />
+    </template>
+    <template id="Load"  oid="1.3.6.1.4.1.2021.10.1.5.int" data_source_type="GAUGE">
+      <!-- uses the UCD-SNMP-MIB OIDs for monitoring Linux/Unix 1, 5 and 15 min load -->
+      <!-- reference: http://www.teamquest.com/resources/gunther/ldavg1.shtml -->
+      <interface int="1" description="1minload"  />
+      <interface int="2" description="5minload"  />
+      <interface int="3" description="15minload" />
+    </template>
+    <template id="Processes" oid="1.3.6.1.2.1.25.1.6.0" data_source_type="GAUGE" frequency="300" /> 
+    <template id="DiskStorage4096" oid="1.3.6.1.2.1.25.2.3.1.int" data_source_type="GAUGE" frequency="3600"> 
+      <!-- Refer to the OID .1.3.6.1.2.1.25.2.3.1.4 to obtain Interface and AllocationUnits information. -->
+      <interface int="5.4" description="Volume size" input_min="0" />
+      <interface int="6.4" description="Volume used" input_min="0" int_alert="lt:409600:2" />
+    </template>
+    <template id="afpUsers" oid=".1.3.6.1.4.1.14697.102.1.0" data_source_type="GAUGE" frequency="300" />
+    <template id="afpThroughput" oid=".1.3.6.1.4.1.14697.102.2.0" data_source_type="GAUGE" frequency="300" />
+  </target>
+  <target id="mail" ip_address="172.16.121.238" community="public" attributes="base,hrStorage" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+    <template id="sysUpTime" oid="1.3.6.1.2.1.1.3.0" data_source_type="GAUGE" frequency="900" />
+    <template id="ifUsage" oid="1.3.6.1.2.1.2.2.1.int" data_source_type="COUNTER">
+      <interface int="10.4" description="mail (en0) ifInOctet " input_max="1.25e8" input_min="0" />
+      <interface int="16.4" description="mail (en0) ifOutOctet" input_max="1.25e8" input_min="0" />
+    </template>
+    <template id="Load" oid="1.3.6.1.4.1.2021.10.1.5.int" data_source_type="GAUGE">
+      <!-- uses the UCD-SNMP-MIB OIDs for monitoring Linux/Unix 1, 5 and 15 min load -->
+      <!-- reference: http://www.teamquest.com/resources/gunther/ldavg1.shtml -->
+      <interface int="1" description="1minload"  />
+      <interface int="2" description="5minload"  />
+      <interface int="3" description="15minload" />
+    </template>
+    <template id="Processes" oid="1.3.6.1.2.1.25.1.6.0" data_source_type="GAUGE" frequency="300" /> 
+    <template id="DiskStorage4096" oid="1.3.6.1.2.1.25.2.3.1.int" data_source_type="GAUGE" frequency="3600"> 
+      <!-- Refer to the OID .1.3.6.1.2.1.25.2.3.1.4 to obtain Interface and AllocationUnits information. -->
+      <interface int="5.4" description="Volume size" input_min="0" />
+      <interface int="6.4" description="Volume used" input_min="0" int_alert="lt:409600:2" />
+    </template>
+    <template id="mailqCount" oid=".1.3.6.1.4.1.14697.101.1.0" data_source_type="GAUGE" frequency="300" />
+    <template id="mailqSize" oid=".1.3.6.1.4.1.14697.101.2.0" data_source_type="GAUGE" frequency="300" />
+  </target>
+  <target id="ksa" ip_address="10.4.51.76" community="public" attributes="base,hrStorage" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+    <template id="sysUpTime" oid="1.3.6.1.2.1.1.3.0" data_source_type="GAUGE" frequency="900" />
+    <template id="ifUsage" oid="1.3.6.1.2.1.2.2.1.int" data_source_type="COUNTER">
+      <interface int="10.4" description="ksa (en0) ifInOctet " input_max="1.25e8" input_min="0" />
+      <interface int="16.4" description="ksa (en0) ifOutOctet" input_max="1.25e8" input_min="0" />
+    </template>
+    <template id="Load"  oid="1.3.6.1.4.1.2021.10.1.5.int" data_source_type="GAUGE">
+      <!-- uses the UCD-SNMP-MIB OIDs for monitoring Linux/Unix 1, 5 and 15 min load -->
+      <!-- reference: http://www.teamquest.com/resources/gunther/ldavg1.shtml -->
+      <interface int="1" description="1minload"  />
+      <interface int="2" description="5minload"  />
+      <interface int="3" description="15minload" />
+    </template>
+    <template id="Processes" oid="1.3.6.1.2.1.25.1.6.0" data_source_type="GAUGE" frequency="300" /> 
+    <template id="DiskStorage4096" oid="1.3.6.1.2.1.25.2.3.1.int" data_source_type="GAUGE" frequency="3600"> 
+      <!-- Refer to the OID .1.3.6.1.2.1.25.2.3.1.4 to obtain Interface and AllocationUnits information. -->
+      <interface int="5.4" description="Volume size" input_min="0" />
+      <interface int="6.4" description="Volume used" input_min="0" int_alert="lt:409600:2" />
+    </template>
+  </target>
+  <target id="www2" ip_address="172.16.121.232" community="public" attributes="base,hrStorage" >
+    <template id="ping" ping="4" data_source_type="GAUGE" />
+    <template id="sysUpTime" oid="1.3.6.1.2.1.1.3.0" data_source_type="GAUGE" frequency="900" />
+    <template id="ifUsage" oid="1.3.6.1.2.1.2.2.1.int" data_source_type="COUNTER">
+      <interface int="10.4" description="kentweb (en0) ifInOctet " input_max="1.25e8" input_min="0" />
+      <interface int="16.4" description="kentweb (en0) ifOutOctet" input_max="1.25e8" input_min="0" />
+    </template>
+    <template id="Load"  oid="1.3.6.1.4.1.2021.10.1.5.int" data_source_type="GAUGE">
+      <!-- uses the UCD-SNMP-MIB OIDs for monitoring Linux/Unix 1, 5 and 15 min load -->
+      <!-- reference: http://www.teamquest.com/resources/gunther/ldavg1.shtml -->
+      <interface int="1" description="1minload"  />
+      <interface int="2" description="5minload"  />
+      <interface int="3" description="15minload" />
+    </template>
+    <template id="Processes" oid="1.3.6.1.2.1.25.1.6.0" data_source_type="GAUGE" frequency="300" /> 
+    <template id="DiskStorage4096" oid="1.3.6.1.2.1.25.2.3.1.int" data_source_type="GAUGE" frequency="3600"> 
+      <!-- Refer to the OID .1.3.6.1.2.1.25.2.3.1.4 to obtain Interface and AllocationUnits information. -->
+      <interface int="5.4" description="Volume size" input_min="0" />
+      <interface int="6.4" description="Volume used" input_min="0" int_alert="lt:409600:2" />
+    </template>
+  </target>
+</targets>
+
